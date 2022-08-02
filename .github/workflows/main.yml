@@ -31,5 +31,5 @@ jobs:
             owner: 'emnatdemo',
             repo: 'test',
             workflow_id: 'test-workflow.yml',
-            ref: 'master'
+            ref: 'main'
           })
