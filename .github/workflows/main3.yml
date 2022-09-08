@@ -44,7 +44,7 @@ jobs:
           # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
-          subject: Github Actions job result
+          subject: Github Actions job result - Failed Build!
           # Required recipients' addresses:
           to: scott.aquilina@arinco.com.au
           # Required sender full name (address can be skipped):
@@ -52,4 +52,4 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          body: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} ${{ toJSON(steps) }} ${{ runner.temp }}/build_logs
