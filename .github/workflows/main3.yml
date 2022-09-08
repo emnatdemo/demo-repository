@@ -48,8 +48,8 @@ jobs:
           # Required recipients' addresses:
           to: scott.aquilina@arinco.com.au
           # Required sender full name (address can be skipped):
-          from: GIT
+          from: GitHub Actions
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} ${{ toJSON(steps) }} ${{ runner.temp }}/build_logs
+          body: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
