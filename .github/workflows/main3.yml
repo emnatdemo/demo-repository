@@ -52,4 +52,4 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: Build job of ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }
