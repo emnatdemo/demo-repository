@@ -44,7 +44,7 @@ jobs:
           # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
-          subject: Github Actions job result - Failed Build!
+          subject: Github Actions job result - Failed Build! - ${{ github.repository }}
           # Required recipients' addresses:
           to: scott.aquilina@arinco.com.au
           # Required sender full name (address can be skipped):
