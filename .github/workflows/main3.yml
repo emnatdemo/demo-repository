@@ -40,7 +40,7 @@ jobs:
           -X POST -H "X-License-Key: ${{ secrets.NEW_RELIC_API_KEY }}" \
           -H "Content-Type: application/json" \
           -H "Accept: */*" \
-          --data '{"message": "Build Faild: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}", "service": "local-service", "hostname": "https://github.com"}' \
+          --data '{"message": "Build Failed: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}", "service": "local-service", "hostname": "https://github.com"}' \
           -v
 
 
