@@ -33,23 +33,4 @@ jobs:
       - name: Run a multi-line script
         run: 1
         
-      - name: Send mail
-        if: ${{ failure() }}
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          # Optional (recommended): mail server username:
-          username: ${{secrets.MAIL_USERNAME}}
-          # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
-          # Required mail subject:
-          subject: Github Actions job result - Failed Build! - ${{ github.repository }}
-          # Required recipients' addresses:
-          to: scott.aquilina@arinco.com.au
-          # Required sender full name (address can be skipped):
-          from: GitHub Actions
-          # Optional whether this connection use TLS (default is true if server_port is 465)
-          secure: true
-          # Optional plain body:
-          body: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
