@@ -29,14 +29,6 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-    - name: Run a one-line script
-      if: ${{ failure() }}
-      run: |
-        curl https://log-api.newrelic.com/log/v1 \
-        -X POST -H "X-License-Key: ${{ secrets.NEW_RELIC_API_KEY }}" \
-        -H "Content-Type: application/json" \
-        -H "Accept: */*" \
-        --data '{"message": "Build Failed: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}", "service": "local-service", "hostname": "https://github.com"}' \
-        -v
 
-
+      - name: Run a somwething
+        run: echo something
