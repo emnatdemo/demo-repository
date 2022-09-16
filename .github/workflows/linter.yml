@@ -47,5 +47,4 @@ jobs:
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_YAML: true
-          YAML_ERROR_ON_WARNING: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
