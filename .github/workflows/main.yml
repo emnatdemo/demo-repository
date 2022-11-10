@@ -40,7 +40,7 @@ jobs:
           if [[ "${{github.ref}}" == "refs/heads/master" || "${{github.ref}}" == "refs/heads/main" ]]; then
             echo "::set-output name=globalParameterFileName::./datafactory/globalParameters/ADF_GlobalParameters_PROD.json"
             echo "::set-output name=overridesFileName:./datafactory/overrides/ADF_Overrides_PROD.json"
-            echo "::set-output name=something::prd"
+            echo "::set-output name=ENV::prd"
             echo "::set-output name=devTriggers:enabled"
             echo "::set-output name=dataFactoryName:helloworld"
             echo "PRODUCTION DEPLOYMENT SELECTED"
@@ -48,12 +48,12 @@ jobs:
             echo "Running outside of standard production branches. Using development variables"
             echo "::set-output name=globalParameterFileName::./datafactory/globalParameters/ADF_GlobalParameters_DEV.json"
             echo "::set-output name=overridesFileName::./datafactory/overrides/ADF_Overrides_DEV.json"
-            echo "::set-output name=something:dev"
+            echo "::set-output name=ENV::dev"
             echo "::set-output name=devTriggers:disabled"
             echo "DEVELOPMENT DEPLOYMENT SELECTED"
           fi
       - name: test
-        run: echo ${{ steps.initialise.outputs.globalParameterFileName }}
+        run: ${{ steps.initialise.outputs.ENV}}-radp-syd-adf
           
           
           
