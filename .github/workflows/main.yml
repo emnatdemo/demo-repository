@@ -38,7 +38,7 @@ jobs:
         id: initialise
         run: |
           if [[ "${{github.ref}}" == "refs/heads/master" || "${{github.ref}}" == "refs/heads/main" ]]; then
-            echo "::set-output name=globalParameterFileName::./datafactory/globalParameters/ADF_GlobalParameters_PROD.json"
+            echo "::set-output name=globalParameterFileName:./datafactory/globalParameters/ADF_GlobalParameters_PROD.json"
             echo "::set-output name=overridesFileName:./datafactory/overrides/ADF_Overrides_PROD.json"
             echo "::set-output name=something::prd"
             echo "::set-output name=devTriggers:enabled"
@@ -53,7 +53,7 @@ jobs:
             echo "DEVELOPMENT DEPLOYMENT SELECTED"
           fi
       - name: test
-        run: echo ${{ steps.initialise.outputs.overridesFileName}}
+        run: echo ${{ steps.initialise.outputs.globalParameterFileName }}
           
           
           
