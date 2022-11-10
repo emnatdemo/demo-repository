@@ -54,6 +54,7 @@ jobs:
           fi
       - name: test
         run: echo ${{ steps.initialise.outputs.something}}-radp-syd-adf
+             echo ${{ steps.initialise.outputs.overridesFileName}}
           
           
           
