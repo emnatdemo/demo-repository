@@ -53,7 +53,7 @@ jobs:
             echo "DEVELOPMENT DEPLOYMENT SELECTED"
           fi
       - name: test
-        run: ${{ steps.initialise.outputs.ENV}}-radp-syd-adf
+        run: echo ${{ steps.initialise.outputs.ENV}}-radp-syd-adf
           
           
           
