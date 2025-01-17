@@ -1,4 +1,4 @@
-name: Octo Organization CI
+name: Organization CI
 
 on:
   push:
@@ -11,7 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          audience: sts.amazonaws.com.cn
+          aws-region: ap-southeast-2
+          role-to-assume: arn:aws:iam::874007981204:role/GitHub_Actions_Role
 
-      - name: Run a one-line script
-        run: echo Hello from Octo Organization
+      - name: s3 ls
+        run: aws s3 ls
