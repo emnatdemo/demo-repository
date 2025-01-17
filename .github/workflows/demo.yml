@@ -1,0 +1,22 @@
+name: Organization CI
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          audience: sts.amazonaws.com.cn
+          aws-region: ap-southeast-2
+          role-to-assume: arn:aws:iam::874007981204:role/GitHub_Actions_Role
+
+      - name: s3 ls
+        run: aws s3 ls
