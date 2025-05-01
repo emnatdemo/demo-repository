@@ -1,0 +1,8 @@
+# The * (star) rule applies to all files in the repository by default and assigns ownership to the another-team 
+
+# Default rule: Only `another-team`  own most of the repository
+* @emnatdemo/another-team
+
+
+# Only `operations-admins` can approve changes to the CODEOWNERS files
+/.github/CODEOWNERS @emnatdemo/another-team
